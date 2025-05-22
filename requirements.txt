@@ -1,3 +1,5 @@
 langchain
 langchain-openai
 beautifulsoup4
+pydantic
+python-dotenv
