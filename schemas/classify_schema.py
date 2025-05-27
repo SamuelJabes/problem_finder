@@ -6,7 +6,7 @@ class ClassifySchema(BaseModel):
     Schema for classifying text using OpenAI's model.
     """
 
-    has_problem: List[str] = Field(
-        ...,
-        description="Indicates if the text reveals a user problem point that could be solved. Must be either 'yes' or 'no'."
+    has_problem: str = Field(
+        description="""Indicates if the text reveals a user problem point that could be solved. MUST BE either 'YES' or 'NO'.""",
+        example=["YES", "NO", "YES"]
     )
