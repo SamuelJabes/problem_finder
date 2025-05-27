@@ -8,3 +8,6 @@ httpx
 parsel
 loguru
 numpy
+scikit-learn
+matplotlib
+seaborn
