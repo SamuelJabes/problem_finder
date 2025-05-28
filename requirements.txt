@@ -11,3 +11,5 @@ numpy
 scikit-learn
 matplotlib
 seaborn
+typer
+rich
