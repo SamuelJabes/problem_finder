@@ -3,3 +3,13 @@ langchain-openai
 beautifulsoup4
 pydantic
 python-dotenv
+httpx[http2]
+httpx
+parsel
+loguru
+numpy
+scikit-learn
+matplotlib
+seaborn
+typer
+rich
