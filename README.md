@@ -17,6 +17,8 @@ Este projeto coleta posts e comentários de subreddits relacionados a negócios 
 - productivity
 - Accounting
 
+Referência de escolhas: [aqui!](https://blog.venturemagazine.net/8-startup-ideas-that-keep-trending-on-reddit-with-analysis-f34b9a78455e)
+
 ## 🚀 Instalação
 
 ### 1. Clone o repositório
@@ -387,17 +389,17 @@ python reddit_analyzer.py show-clusters --cluster-id 3 --limit 50
 ## 🛠️ Arquitetura Técnica
 
 ### Classes Principais
-- `RedditScraper`: Web scraping assíncrono do Reddit
-- `PainPointClassifier`: Classificação de pain points com GPT-4
+- `RedditScraper`: [Web scraping assíncrono do Reddit](https://scrapfly.io/blog/how-to-scrape-reddit-social-data/)
+- `PainPointClassifier`: Classificação de pain points com GPT-4o
 - `EmbeddingGenerator`: Geração de embeddings com OpenAI
 - `ClusterAnalyzer`: Clustering K-means + análise com LLM
 - Interface CLI robusta com Typer + Rich
 
 ### Modelos Utilizados
-- **Classificação**: GPT-4 Turbo (gpt-4o-2024-08-06)
+- **Classificação**: GPT-4o (gpt-4o-2024-08-06)
 - **Embeddings**: text-embedding-3-large (3072 dimensões)
 - **Clustering**: K-means scikit-learn
-- **Análise**: GPT-4 Turbo com structured output
+- **Análise**: GPT-4o com structured output
 
 ### Schemas Pydantic
 - `ClassifySchema`: Estrutura para classificação de pain points
@@ -444,103 +446,3 @@ python reddit_analyzer.py continue
 # Análise com filtros rigorosos
 python reddit_analyzer.py insights --min-intensity 8 --min-confidence 9
 ```
-
-## 📈 Próximos Passos
-
-### ✅ Implementado
-- [x] Scraping automatizado do Reddit
-- [x] Classificação de pain points com LLM
-- [x] Clustering inteligente de problemas similares  
-- [x] Análise automatizada de oportunidades de negócio
-- [x] Interface CLI completa e robusta
-- [x] Extração detalhada de insights em português
-- [x] Visualização estruturada de clusters
-- [x] Pipeline completo end-to-end
-
-### 🔄 Em Desenvolvimento
-- [ ] Interface Streamlit para visualização interativa
-- [ ] Validação automática de oportunidades de mercado
-- [ ] Monitoramento contínuo de novos pain points
-- [ ] Integração com APIs de análise de mercado
-- [ ] Dashboard executivo com métricas de ROI
-- [ ] Alertas automáticos para novas oportunidades
-- [ ] Export para relatórios executivos (PDF/Excel)
-
-### 🎯 Roadmap Futuro
-- [ ] Análise de sentimento avançada
-- [ ] Integração com outras fontes (Twitter, LinkedIn)
-- [ ] Machine Learning para predição de oportunidades
-- [ ] Sistema de score automático para viabilidade
-- [ ] Integração com ferramentas de pesquisa de mercado
-
-## 🤝 Contribuição
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-## ⚠️ Limitações e Considerações
-
-### Rate Limiting
-- Reddit: ~60 requests/minute (seja gentil!)
-- OpenAI: Depende do plano (monitore usage)
-
-### Custos Estimados
-- **Classificação**: ~$0.03 por 1000 textos (GPT-4 Turbo)
-- **Embeddings**: ~$0.13 por 1000 textos (text-embedding-3-large)
-- **Clustering Analysis**: ~$0.02 por cluster (GPT-4 Turbo)
-- **Total**: ~$20-50 para análise completa de 10k+ textos
-
-### Qualidade dos Dados
-- Dependente da qualidade dos prompts de classificação
-- Subreddits podem ter conteúdo protegido ou privado
-- Clustering pode agrupar pain points não relacionados
-
-## 🆘 Solução de Problemas
-
-### ❌ Erro de API Key
-```bash
-❌ OpenAI API key not found. Set OPENAI_API_KEY env var or use --api-key option.
-```
-**Solução**: Configure `OPENAI_API_KEY` no arquivo `.env`
-
-### ❌ Rate Limiting do Reddit
-```bash
-❌ Error scraping r/Entrepreneur: 429 Too Many Requests
-```
-**Solução**: Reduza `--max-pages` e `--max-posts`, adicione delays
-
-### ❌ Erro de Parsing HTML
-```bash
-❌ Error parsing subreddit data
-```
-**Solução**: Reddit mudou estrutura HTML. Verifique seletores XPath no código
-
-### ❌ Clustering com Poucos Dados
-```bash
-❌ Not enough data points for clustering
-```
-**Solução**: Execute mais scraping ou reduza `--n-clusters`
-
-### ❌ Arquivo Não Encontrado
-```bash
-❌ Input file not found: data/comments/pain_points.json
-```
-**Solução**: Execute os passos anteriores do pipeline:
-```bash
-python reddit_analyzer.py scrape
-python reddit_analyzer.py classify
-```
-
-## 📞 Suporte
-
-- 🐛 **Bugs**: Abra uma issue no GitHub
-- 💡 **Features**: Discuta nas GitHub Discussions  
-- 📖 **Documentação**: Veja exemplos neste README
-- 🤔 **Dúvidas**: Use o comando `python reddit_analyzer.py info`
