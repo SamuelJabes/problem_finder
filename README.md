@@ -446,3 +446,21 @@ python reddit_analyzer.py continue
 # Análise com filtros rigorosos
 python reddit_analyzer.py insights --min-intensity 8 --min-confidence 9
 ```
+
+## Vídeo de Apresentação
+> Assista aqui ao vídeo.
+
+[![Vídeo de Apresentação](https://img.youtube.com/vi/2HiQ7tl4-rA/0.jpg)](https://youtu.be/2HiQ7tl4-rA)
+
+## Estudo da solução
+
+Na pasta
+
+```
+src/
+├── impacto_solucao.md
+├── outras_alternativas.md
+```
+
+Estão alguns relatos e estudos sobre a aplicação. Em `impacto_solucao.md` nós trazemos uma sumarização e noção de impacto da nossa aplicação por meio de entrevistas
+reais com empreendedores do HUB de Inovação do Insper. Já em `outras_alternativas` trazemos um estudo de outras soluções que já existiam e como a nossa pode se diferenciar. 
